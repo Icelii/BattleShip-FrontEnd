@@ -1,0 +1,55 @@
+<div class="dropdown">
+  <button class="btn submit-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    {{name()}}
+  </button>
+  <ul class="dropdown-menu">
+    <li><a (click)="logout()" class="dropdown-item">Cerrar sesión</a></li>
+  </ul>
+</div>    
+<div class="turno text-center">
+    <span class="badge etiqueta">Es el turno de: {{turno()}}</span>
+   </div>
+
+<div class="container game-board">    
+       <div class="container ">
+        <table>
+            <tr>
+              <td></td>
+              <td class="label" *ngFor="let letter of letters">{{ letter }}</td>
+            </tr>
+            <tr *ngFor="let row of tablero; let i = index">
+              <td class="label">{{ numbers[i] }}</td>
+              <td *ngFor="let cell of row; let j = index">
+                <button (click)="accion(i, j)" [ngClass]="{
+                    'barco': cell === 'B',
+                    'agua': cell === 'A',
+                    'gris': cell === 'F',
+                    'rojo': cell === 'K'
+                  }" [disabled]="cell">
+          </button>
+              </td>
+            </tr>
+          </table>
+       </div>
+
+       <div class="container">
+        <table>
+            <tr>
+              <td></td>
+              <td class="label" *ngFor="let letter of letters">{{ letter }}</td>
+            </tr>
+            <tr *ngFor="let row of tableroEnemigo; let i = index">
+              <td class="label">{{ numbers[i] }}</td>
+              <td *ngFor="let cell of row; let j = index">
+                <button (click)="accion(i, j)" [ngClass]="{
+                    'barco2': cell === 'B',
+                    'agua': cell === 'A',
+                    'gris': cell === 'F',
+                    'rojo': cell === 'K'
+                  }" [disabled]="cell == 'F' || cell=='K'">
+          </button>
+              </td>
+            </tr>
+          </table>
+       </div>
+</div>

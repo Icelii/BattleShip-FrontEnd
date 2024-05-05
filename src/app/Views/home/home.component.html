@@ -1,0 +1,68 @@
+<div class="container-fluid g-0">
+    <div class="mt-1">
+        <div class="dropdown" [hidden]="hiddenThings() === false">
+            <button class="btn submit-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{name()}}
+            </button>
+            <ul class="dropdown-menu">
+              <li><a (click)="logout()" class="dropdown-item">Cerrar sesión</a></li>
+            </ul>
+          </div>          
+        <button [hidden]="hiddenThings() === true" class="btn submit-btn" routerLink="/login">Iniciar sesión</button>
+        <button [hidden]="hiddenThings() === true" class="btn submit-btn" routerLink="/signUp">Registrarse</button>
+    </div>
+    <div class="container text-center">
+        <h2 class="header">Batalla Naval</h2>
+    </div>
+    <div class="container my-5 text-center">
+        <div [hidden]="hiddenThings() === true" class="text-center my-5">
+            <span class="aviso">Inicia sesión para poder jugar</span>
+        </div>
+        <div class="text-center my-4">
+          <button [hidden]="hiddenThings() === false" [disabled]="hiddenThings() === false" type="button" class="btn search-btn" (click)="iniciarPartida()">Iniciar partida</button>
+      </div>
+      <div class="text-center my-4">
+        <button [hidden]="hiddenThings() === false" [disabled]="hiddenThings() === false" type="button" class="btn search-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Historial de partidas</button>
+    </div>
+    </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">Historial de partidas</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Jugador 1</th>
+                <th>Jugador 2</th>
+                <th>Ganador</th>
+                <th>Estado</th>
+                <th>Fecha</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let partida of partidas">
+                <td>{{partida.jugador_1}}</td>
+                <td>{{partida.jugador_2}}</td>
+                <td>{{partida.ganador}}</td>
+                <td>{{partida.estado}}</td>
+                <td>{{partida.fecha}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>

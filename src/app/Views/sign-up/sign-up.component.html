@@ -1,0 +1,31 @@
+<div class="container-fluid g-0">
+    <div class="container text-center">
+        <h2 class="loginHeader">Registrarse</h2>
+    </div>
+    <div class="container my-5 text-center col-md-4">
+        <form [formGroup]="signUpForm">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-at"></i></span>
+                <input formControlName="name" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope"></i></span>
+                <input formControlName="email" type="text" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-key"></i></span>
+                <input formControlName="password" type="password" class="form-control" placeholder="Contraseña" aria-label="password" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="mt-4 mb-3">
+                <button (click)="onSubmit()" class="btn submit-btn">Registrarse</button>
+            </div>
+        </form>
+
+        <div class="container my-3 text-center col-md-8">
+            <span class="noOccunt">Ya tienes cuenta? <a routerLink="/login">Da click aquí para iniciar sesión</a></span>
+        </div>
+    </div>
+</div>

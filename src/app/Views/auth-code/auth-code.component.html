@@ -1,0 +1,15 @@
+<main class="form-signin w-100 m-auto">
+    <div class="login-box">
+        <form [formGroup]="authForm">
+            <div class="login-header">
+                <header class="mb-2">Codigo de autenticación</header>
+            </div>
+            <div class="input-box">
+                <input formControlName="codigo" type="text" class="input-field" placeholder="Ingresa el codigo de verificacion" autocomplete="off" required>
+            </div>
+        </form>
+        <div class="input-submit">
+            <button (click)="onSubmit()" class="submit-btn" id="submit">Enviar</button>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,101 @@
+.game-board {
+  display: flex;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  
+}
+
+.submit-btn{
+  width: 10%;
+  height: 35px;
+  background: #A0C3D2;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .3s;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  margin-left: 1rem;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+.submit-btn:hover{
+  background: #A0C3D2;
+  transform: scale(1.05,1);
+}
+
+.dropdown-menu{
+  cursor: pointer;
+}
+
+.game-board > .container {
+  flex: 1;
+}
+
+.container {
+  width: auto;
+  height: auto;
+}
+
+.label {
+  color: #fff;
+  font-weight: 800;
+  text-shadow: 2px 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.barco {
+  background-image: url('../../../assets/barco.png');
+  background-color: #89CFF3;
+  background-size: cover;
+  background-position: center;
+}
+
+.barco2 {
+  background-color: #89CFF3;
+}
+
+.rojo {
+  background-image: url('../../../assets/hundimiento.png');
+  background-color: #89CFF3;
+  background-size: cover;
+    background-position: center;
+}
+
+.etiqueta {
+  margin-top: 0.5rem;
+  background-color: #654e92;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 2px 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+.agua {
+  background-color: #89CFF3;
+}
+
+.gris {
+  background-color: grey;
+  color: white;
+}
